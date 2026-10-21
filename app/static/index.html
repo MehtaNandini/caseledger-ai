@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CaseLedger AI</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<main class="shell">
+  <header><div><p class="eyebrow">REGULATED CASE-FILE INTELLIGENCE</p><h1>CaseLedger AI</h1><p>Reliable document ingestion, structured extraction, retrieval and grounded answers with tenant isolation and auditability.</p></div><span class="badge">demo-key</span></header>
+  <section class="grid">
+    <article class="card">
+      <h2>1. Create case</h2>
+      <label>Reference<input id="ref" value="CASE-2026-001" /></label>
+      <label>Title<input id="title" value="Supplier dispute case" /></label>
+      <button onclick="createCase()">Create / replay safely</button>
+      <pre id="caseOut"></pre>
+    </article>
+    <article class="card">
+      <h2>2. Ingest document</h2>
+      <label>Case ID<input id="caseId" value="1" /></label>
+      <label>Filename<input id="filename" value="notice.txt" /></label>
+      <label>Document text<textarea id="docText">Case IN 142/26. Claim amount 23.450,80 €. Hearing date 14.05.2026. Contact case@example.org. The supplier requests payment for delivered components.</textarea></label>
+      <button onclick="ingest()">Ingest and structure</button>
+      <pre id="docOut"></pre>
+    </article>
+    <article class="card wide">
+      <h2>3. Ask with citations</h2>
+      <div class="row"><input id="question" value="What is the claim amount and hearing date?" /><button onclick="ask()">Retrieve</button></div>
+      <pre id="answerOut"></pre>
+    </article>
+  </section>
+  <footer>Independent portfolio project • Python • FastAPI • SQLAlchemy • PostgreSQL-ready • Docker • CI</footer>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>
